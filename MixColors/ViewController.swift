@@ -7,13 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupLayout()
     }
-
-
+    
+    private func setupLayout() {
+        view.backgroundColor = .systemCyan
+    }
 }
 
