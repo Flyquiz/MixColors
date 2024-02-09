@@ -9,13 +9,12 @@ import UIKit
 
 final class ViewController: UIViewController {
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLayout()
+        view = View()
     }
     
-    private func setupLayout() {
-        view.backgroundColor = .systemCyan
-    }
 }
 

@@ -12,6 +12,7 @@
 		AAFE7D352B769C1600D11AD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFE7D342B769C1600D11AD6 /* ViewController.swift */; };
 		AAFE7D3A2B769C1B00D11AD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAFE7D392B769C1B00D11AD6 /* Assets.xcassets */; };
 		AAFE7D3D2B769C1B00D11AD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAFE7D3B2B769C1B00D11AD6 /* LaunchScreen.storyboard */; };
+		AAFE7D472B76AB8100D11AD6 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFE7D462B76AB8100D11AD6 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		AAFE7D392B769C1B00D11AD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAFE7D3C2B769C1B00D11AD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAFE7D3E2B769C1B00D11AD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAFE7D462B76AB8100D11AD6 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				AAFE7D302B769C1600D11AD6 /* AppDelegate.swift */,
 				AAFE7D322B769C1600D11AD6 /* SceneDelegate.swift */,
 				AAFE7D342B769C1600D11AD6 /* ViewController.swift */,
+				AAFE7D462B76AB8100D11AD6 /* View.swift */,
 				AAFE7D392B769C1B00D11AD6 /* Assets.xcassets */,
 				AAFE7D3B2B769C1B00D11AD6 /* LaunchScreen.storyboard */,
 				AAFE7D3E2B769C1B00D11AD6 /* Info.plist */,
@@ -134,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAFE7D472B76AB8100D11AD6 /* View.swift in Sources */,
 				AAFE7D352B769C1600D11AD6 /* ViewController.swift in Sources */,
 				AAFE7D312B769C1600D11AD6 /* AppDelegate.swift in Sources */,
 				AAFE7D332B769C1600D11AD6 /* SceneDelegate.swift in Sources */,
