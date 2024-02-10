@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol ViewDelegate: AnyObject {
+    func firstButtonAction()
+    func secondButtonAction()
+}
+
 final class View: UIView {
     
+    weak var delegate: ViewDelegate?
+        
     //MARK: First group
     private let firstColorLabel: UILabel = {
         let label = UILabel()
@@ -22,7 +29,7 @@ final class View: UIView {
         let colorPicker = UIColorPickerViewController()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .blue
-        
+        button.addTarget(self, action: #selector(firstButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -39,7 +46,7 @@ final class View: UIView {
         let colorPicker = UIColorPickerViewController()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .red
-        
+        button.addTarget(self, action: #selector(secondButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -134,6 +141,7 @@ final class View: UIView {
         return stackView
     }()
     
+    //MARK: init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
@@ -143,6 +151,8 @@ final class View: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    //MARK: Layout
     private func setupLayout() {
         self.backgroundColor = .systemGray6
 
@@ -170,5 +180,26 @@ final class View: UIView {
             thirdColorButton.heightAnchor.constraint(equalToConstant: buttonHeight),
             thirdColorButton.widthAnchor.constraint(equalToConstant: buttonWidth),
         ])
+    }
+    
+//MARK: Actions & methods
+    @objc private func firstButtonAction() {
+        delegate?.firstButtonAction()
+    }
+    
+    @objc private func secondButtonAction() {
+        delegate?.secondButtonAction()
+    }
+    
+    internal func setTermColor(for button: Int, color: UIColor) {
+        switch button {
+        case 1: firstColorButton.backgroundColor = color
+        case 2: secondColorButton.backgroundColor = color
+        default: break
+        }
+    }
+    
+    internal func setSumColor(color: UIColor) {
+        thirdColorButton.backgroundColor = color
     }
 }
