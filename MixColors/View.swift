@@ -15,12 +15,12 @@ protocol ViewDelegate: AnyObject {
 final class View: UIView {
     
     weak var delegate: ViewDelegate?
-        
+    
     //MARK: First group
     private let firstColorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Blue"
+        label.text = "Синий"
         return label
     }()
     
@@ -37,7 +37,7 @@ final class View: UIView {
     private let secondColorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Red"
+        label.text = "Красный"
         return label
     }()
     
@@ -54,7 +54,7 @@ final class View: UIView {
     private let thirdColorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Purple"
+        label.text = "Фиолетовый"
         return label
     }()
     
@@ -155,12 +155,12 @@ final class View: UIView {
     //MARK: Layout
     private func setupLayout() {
         self.backgroundColor = .systemGray6
-
+        
         [titleLabel, mainStackView].forEach { self.addSubview($0) }
         
         let buttonHeight: CGFloat = 75
         let buttonWidth: CGFloat = 75
-                
+        
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -182,7 +182,7 @@ final class View: UIView {
         ])
     }
     
-//MARK: Actions & methods
+    //MARK: Actions & methods
     @objc private func firstButtonAction() {
         delegate?.firstButtonAction()
     }
@@ -191,7 +191,7 @@ final class View: UIView {
         delegate?.secondButtonAction()
     }
     
-    internal func setTermColor(for button: Int, color: UIColor) {
+    public func setTermColor(for button: Int, color: UIColor) {
         switch button {
         case 1: firstColorButton.backgroundColor = color
         case 2: secondColorButton.backgroundColor = color
@@ -199,7 +199,16 @@ final class View: UIView {
         }
     }
     
-    internal func setSumColor(color: UIColor) {
+    public func setSumColor(color: UIColor) {
         thirdColorButton.backgroundColor = color
+    }
+    
+    public func setLabel(for label: Int, name text: String) {
+        switch label {
+        case 1: firstColorLabel.text = text
+        case 2: secondColorLabel.text = text
+        case 3: thirdColorLabel.text = text
+        default: break
+        }
     }
 }
