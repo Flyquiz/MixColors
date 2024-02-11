@@ -13,19 +13,19 @@ final class ViewController: UIViewController, ViewDelegate {
     
     lazy public var selectedColorOne = UIColor(.blue) {
         didSet {
-            externalView.setTermColor(for: 1, color: selectedColorOne)
+            externalView.setColor(for: 1, color: selectedColorOne)
         }
     }
     
     lazy public var selectedColorTwo = UIColor(.red) {
         didSet {
-            externalView.setTermColor(for: 2, color: selectedColorTwo)
+            externalView.setColor(for: 2, color: selectedColorTwo)
         }
     }
     
     lazy public var blendedColor = UIColor() {
         didSet {
-            externalView.setSumColor(color: blendedColor)
+            externalView.setColor(for: 3, color: blendedColor)
         }
     }
     
@@ -79,6 +79,7 @@ final class ViewController: UIViewController, ViewDelegate {
         //        print("Mixed red:\(blendedRed), green:\(blendedGreen), blue:\(blendedBlue), alpha:\(blendedAlpha) \n")
         print(blendedColor.description)
         self.blendedColor = blendedColor
+        externalView.setLabel(for: 3, name: getColorLabel(color: blendedColor))
     }
     
     private func getColorLabel(color: UIColor) -> String {

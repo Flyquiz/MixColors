@@ -191,17 +191,15 @@ final class View: UIView {
         delegate?.secondButtonAction()
     }
     
-    public func setTermColor(for button: Int, color: UIColor) {
+    public func setColor(for button: Int, color: UIColor) {
         switch button {
         case 1: firstColorButton.backgroundColor = color
         case 2: secondColorButton.backgroundColor = color
+        case 3: thirdColorButton.backgroundColor = color
         default: break
         }
     }
-    
-    public func setSumColor(color: UIColor) {
-        thirdColorButton.backgroundColor = color
-    }
+
     
     public func setLabel(for label: Int, name text: String) {
         switch label {
